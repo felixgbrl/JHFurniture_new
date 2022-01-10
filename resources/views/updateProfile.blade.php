@@ -1,11 +1,13 @@
-@extends('Layouts.admin')
-@section('content')
+@auth
+
+
   @if (Auth::user()->role == 'Admin')
+  @include("layouts.admin")
     <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-4 mt-2">
             <main class="form-register">
-              <form method="POST" action="/profile/{{Auth::user()->name}}/update">
+              <form method="POST" action="/update/{{Auth::user()->name}}">
                 @csrf
                 <h1 class="h3 mb-3 fw-normal text-center">Update Profile</h1>
         
@@ -40,11 +42,12 @@
         </div>
       </div>
   @else
+  @include("Layouts.member")
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-4 mt-2">
           <main class="form-register">
-            <form method="POST" action="/profile/{{Auth::user()->name}}/update">
+            <form method="POST" action="/update/{{Auth::user()->name}}">
               @csrf
               <h1 class="h3 mb-3 fw-normal text-center">Update Profile</h1>
       
@@ -124,4 +127,4 @@
       </div>  
     </div>      
   @endif
-@endsection
+@endauth

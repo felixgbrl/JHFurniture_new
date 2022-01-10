@@ -43,6 +43,12 @@ Route::get('/addfurniture', function(){
     return view('add');
 });
 
+Route::POST('/update/{user:name}', [UserController::class, 'update']);
+
+Route::GET('/update/{user:name}', function(){
+    return view('updateProfile');
+})->middleware('auth');
+
 Route::POST('/updateFurniture/{furniture:furniture_name}', [FurnitureController::class, 'updateFurniture'])->middleware('auth');
 Route::GET('/updateFurniture/{furniture:furniture_name}', [FurnitureController::class, 'UpdateIndex'])->middleware('auth');
 
@@ -53,3 +59,4 @@ Route::GET('/detail/{furniture:furniture_name}', [FurnitureController::class, 'd
 Route::GET('/profile', function(){
     return view('profile');
 })->middleware('auth');
+

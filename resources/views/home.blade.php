@@ -34,7 +34,7 @@
                             <div class="card-detail">
                                 <div class="image-detail text-center">
                                     <a class="card-image" href="/detail/{{$furniture->furniture_name}}">
-                                        <img src="{{ asset('storage/'.$furniture->image) }}", width="100px", height="95px">
+                                        <img src="{{ asset('storage/'.$furniture->image) }}", width="200px", height="200px">
                                         
                                     </a>
                                 </div>
@@ -76,7 +76,7 @@
                             <div class="card-detail">
                                 <div class="image-detail text-center">
                                     <a class="card-image" href="/detail/{{$furniture->furniture_name}}">
-                                        <img src="{{ asset('storage/'.$furniture->image) }}", width="100px", height="95px">
+                                        <img src="{{ asset('storage/'.$furniture->image) }}", width="200px", height="200px">
                                     </a>
                                 </div>
                     
@@ -117,7 +117,7 @@
                         <div class="card-detail">
                             <div class="image-detail text-center">
                                 <a class="card-image" href="/detail/{{$furniture->furniture_name}}">
-                                    <img src="{{ asset('storage/'.$furniture->image) }}", width="100px", height="95px">
+                                    <img src="{{ asset('storage/'.$furniture->image) }}", width="200px", height="200px">
                                 </a>
                             </div>
                 

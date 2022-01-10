@@ -66,7 +66,7 @@
                                 <a href="#" class="btn btn-success" role="button" aria-pressed="true">View All User's Transaction</a>                  
                             </div>
                             <div class=" card-update">
-                                <a href="#" class="btn btn-warning" role="button" aria-pressed="true">Update Profile</a>
+                                <a href="/update/{{ Auth::user()->name }}" class="btn btn-warning" role="button" aria-pressed="true">Update Profile</a>
                             </div>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                                 <a href="#" class="btn btn-success" role="button" aria-pressed="true">View Transaction History</a>                      
                             </div>
                             <div class=" card-update">
-                                <a href="#" class="btn btn-warning" role="button" aria-pressed="true">Update Profile</a>
+                                <a href="/update/{{ Auth::user()->name }}" class="btn btn-warning" role="button" aria-pressed="true">Update Profile</a>
                             </div>
                         </div>
                     </div>

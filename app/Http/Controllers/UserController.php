@@ -91,44 +91,44 @@ class UserController extends Controller
 
 
 
-    // public function update(Request $request){
+    public function update(Request $request){
 
-    //     if(Auth::user()->role == 'Admin'){
-    //         $credentials = $request->validate([
-    //             'name' => 'required|max:15',
-    //             'email' => 'required|email:dns',
-    //             'password' => 'required|between:5,20',  
-    //             'address',
-    //             'gender'
-    //         ]);
+        if(Auth::user()->role == 'Admin'){
+            $credentials = $request->validate([
+                'name' => 'required|max:15',
+                'email' => 'required|email:dns',
+                'password' => 'required|between:5,20',  
+                'address',
+                'gender'
+            ]);
     
-    //         $credentials['address'] = Auth::user()->address;
-    //         $credentials['gender'] = Auth::user()->gender;
-    //         $credentials['password'] = Hash::make($credentials['password']);
+            $credentials['address'] = Auth::user()->address;
+            $credentials['gender'] = Auth::user()->gender;
+            $credentials['password'] = Hash::make($credentials['password']);
     
     
-    //         User::where('id', Auth::user()->id)
-    //                 ->update($credentials);
+            User::where('id', Auth::user()->id)
+                    ->update($credentials);
             
-    //         return redirect('/profile')->with('profile_update', 'Profile has been updated!');
+            return redirect('/profile')->with('profile_update', 'Profile has been updated!');
 
-    //     }else{
-    //         $credentials = $request->validate([
-    //             'name' => 'required|max:15',
-    //             'email' => 'required|email:dns',
-    //             'password' => 'required|between:5,20',  
-    //             'address' => 'required|between:5,95',
-    //             'gender' => 'required'
-    //         ]);
+        }else{
+            $credentials = $request->validate([
+                'name' => 'required|max:15',
+                'email' => 'required|email:dns',
+                'password' => 'required|between:5,20',  
+                'address' => 'required|between:5,95',
+                'gender' => 'required'
+            ]);
 
-    //         $credentials['password'] = Hash::make($credentials['password']);
+            $credentials['password'] = Hash::make($credentials['password']);
     
-    //         User::where('id', Auth::user()->id)
-    //                 ->update($credentials);
+            User::where('id', Auth::user()->id)
+                    ->update($credentials);
             
-    //         return redirect('/profile')->with('profile_update', 'Profile has been updated!');
-    //     }
+            return redirect('/profile')->with('profile_update', 'Profile has been updated!');
+        }
         
 
-    // }
+    }
 }
